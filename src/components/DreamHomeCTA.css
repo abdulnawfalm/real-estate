@@ -1,0 +1,103 @@
+/* ===============================
+DREAM HOME CTA – PREMIUM
+=============================== */
+
+.dream-cta {
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    #fff,
+    #EFE7DA
+  );
+}
+
+.dream-cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 56px;
+  border-radius: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  background: linear-gradient(
+    135deg,
+    #0A1A2A,
+    #081F5C
+  );
+}
+
+/* ===============================
+LEFT CONTENT
+=============================== */
+
+.dream-cta-content h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  color: #D4AF37;
+  margin-bottom: 12px;
+}
+
+.dream-cta-content p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+/* ===============================
+BUTTON
+=============================== */
+
+.dream-cta-btn {
+  background: #D4AF37;
+  color: #fff;
+  border: none;
+  padding: 16px 34px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dream-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+RESPONSIVE
+=============================== */
+
+@media (max-width: 900px) {
+  .dream-cta-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 32px;
+  }
+
+  .dream-cta-content p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .dream-cta {
+    padding: 60px 16px;
+  }
+
+  .dream-cta-container {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .dream-cta-btn {
+    width: 100%;
+    padding: 16px;
+  }
+}

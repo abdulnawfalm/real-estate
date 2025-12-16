@@ -1,0 +1,201 @@
+/* ===============================
+PREMIUM EXPERIENCE – LUXURY HERO
+=============================== */
+
+.premium {
+  padding: 120px 20px;
+  background: radial-gradient(circle at top left, #fffaf0, #ffffff 60%);
+}
+
+.premium-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ===============================
+LEFT CONTENT
+=============================== */
+
+.premium-label {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 18px;
+}
+
+.premium-title {
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #081f5c;
+  margin-bottom: 22px;
+}
+
+.premium-title span {
+  color: #d4af37;
+}
+
+.premium-text {
+  font-size: 18px;
+  color: #6b7280;
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ===============================
+MEDIA
+=============================== */
+
+.media-wrapper {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+}
+
+.media-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+
+/* ===============================
+MODAL
+=============================== */
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-modal-content video {
+  width: 100%;
+  height: auto;
+}
+
+/* ===============================
+CLOSE BUTTON – FIXED ✅
+=============================== */
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;      /* ✅ removed black circle */
+  border: none;
+  color: #ffffff;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #d4af37;               /* subtle luxury hover */
+}
+
+/* ===============================
+ACTIONS
+=============================== */
+
+.premium-actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #d4af37;
+  color: #ffffff;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(212, 175, 55, 0.35);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1.5px solid #d4af37;
+  color: #d4af37;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.secondary-btn:hover {
+  background: #d4af37;
+  color: #ffffff;
+}
+
+/* ===============================
+RESPONSIVE
+=============================== */
+
+@media (max-width: 1024px) {
+  .premium-container {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .premium-media {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .premium {
+    padding: 80px 16px;
+  }
+
+  .premium-title {
+    font-size: 32px;
+  }
+
+  .premium-text {
+    font-size: 16px;
+  }
+}

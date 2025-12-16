@@ -1,0 +1,200 @@
+.properties {
+  padding: 100px 20px;
+  background: #f9fafb;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.properties.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.properties-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.properties-title {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.properties-subtitle {
+  text-align: center;
+  color: #000;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.property-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease;
+}
+
+/* IMAGE HOVER */
+.property-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.property-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.property-card:hover .property-image img {
+  transform: scale(1.06);
+}
+
+/* BADGES */
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.badge.featured {
+  background: #d4af37;
+}
+
+.badge.new {
+  background: #2563eb;
+}
+
+.badge.exclusive {
+  background: #111827;
+}
+
+/* CONTENT */
+.property-content {
+  padding: 20px;
+}
+
+.property-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #000;
+}
+
+.location {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+/* FOOTER */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #081f5c;
+}
+
+/* ===============================
+   CTA BUTTON – FIXED ✅
+   =============================== */
+
+.cta {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #d4af37;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+
+  outline: none;                          /* ✅ remove focus ring */
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent; /* ✅ mobile fix */
+}
+
+.cta:focus,
+.cta:active,
+.cta:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* VIEW ALL */
+.view-all {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.view-all button {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.view-all button:focus,
+.view-all button:active,
+.view-all button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .properties {
+    padding: 70px 16px;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .properties-title {
+    font-size: 32px;
+  }
+}
