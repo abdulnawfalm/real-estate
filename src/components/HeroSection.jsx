@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
 
-import heroBg from "../assets/hero-bg-1.jpg";
+import heroBg from "../assets/hero-bg.jpg";
 import locationIcon from "../assets/icon-location.png";
 import propertyIcon from "../assets/icon-property.png";
 import priceIcon from "../assets/icon-price.png";
