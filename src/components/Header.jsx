@@ -27,6 +27,11 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 🔒 lock body scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
+
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-container">
@@ -41,25 +46,21 @@ const Header = () => {
           <span className="nav-link" onClick={() => scrollToSection("hero")}>
             Home
           </span>
-
           <span
             className="nav-link"
             onClick={() => scrollToSection("properties")}
           >
             Properties
           </span>
-
           <span
             className="nav-link"
             onClick={() => scrollToSection("communities")}
           >
             Communities
           </span>
-
           <span className="nav-link" onClick={() => scrollToSection("about")}>
             About
           </span>
-
           <span
             className="nav-link"
             onClick={() => scrollToSection("why-choose")}
@@ -70,7 +71,6 @@ const Header = () => {
 
         {/* Actions */}
         <div className="header-actions">
-          {/* Contact Button */}
           <button
             className="contact-btn"
             onClick={() => scrollToSection("contact")}
@@ -78,7 +78,6 @@ const Header = () => {
             Contact Us
           </button>
 
-          {/* Hamburger */}
           <div
             className={`hamburger ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
