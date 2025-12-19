@@ -27,7 +27,7 @@ HEADER
   font-size: 13px;
   letter-spacing: 0.12em;
   font-weight: 700;
-  color: #d4af37;
+  color: #081c15;
   margin-bottom: 14px;
 }
 
@@ -39,7 +39,7 @@ HEADER
 }
 
 .section-title span {
-  color: #d4af37;
+  color: #124f3a;
 }
 
 .section-subtitle {
@@ -129,7 +129,7 @@ CONTENT
 .count {
   font-size: 13px;
   font-weight: 600;
-  color: #f5c56b;
+  color: #65ffb7;
   margin-bottom: 6px;
 }
 
@@ -161,8 +161,8 @@ CTA (FIXED HERE ✅)
 }
 
 .community-card button:hover {
-  background: #d4af37;
-  border-color: #d4af37;
+  background: #1F3D2B;
+  border-color: #8FB996;
   color: #ffffff; /* ✅ TEXT STAYS WHITE */
 }
 

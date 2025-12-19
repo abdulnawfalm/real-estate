@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import PropertiesSection from "./components/PropertiesSection";
@@ -11,15 +11,14 @@ import VideoHero from "./components/VideoHero";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-
- 
-
 const App = () => {
+  const [filters, setFilters] = useState(null);
+
   return (
     <>
       <Header />
-      <HeroSection />
-      <PropertiesSection />
+      <HeroSection onSearch={setFilters} />
+      <PropertiesSection filters={filters} />
       <WhyChooseUs />
       <CommunitiesSection />
       <PremiumExperience />
