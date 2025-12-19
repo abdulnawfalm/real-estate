@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./PropertiesSection.css";
 
-// demo images
 import p1 from "../assets/property-1.jpg";
 import p2 from "../assets/property-2.jpg";
 import p3 from "../assets/property-3.jpg";
@@ -16,17 +15,19 @@ const allProperties = [
   {
     id: 1,
     name: "Palm Jumeirah Villa",
+    type: "Villa",
     image: p1,
     badge: "Featured",
     price: "AED 8,500,000",
     beds: 5,
     baths: 6,
     size: "6,200 sq ft",
-    location: "Palm Jumeirah, Dubai",
+    location: "Palm Jumeirah",
   },
   {
     id: 2,
     name: "Downtown Luxury Apartment",
+    type: "Apartment",
     image: p2,
     badge: "New",
     price: "AED 2,400,000",
@@ -38,6 +39,7 @@ const allProperties = [
   {
     id: 3,
     name: "Marina Penthouse",
+    type: "Penthouse",
     image: p3,
     badge: "Exclusive",
     price: "AED 12,000,000",
@@ -49,6 +51,7 @@ const allProperties = [
   {
     id: 4,
     name: "Beachfront Villa",
+    type: "Villa",
     image: p4,
     badge: "Featured",
     price: "AED 9,300,000",
@@ -60,6 +63,7 @@ const allProperties = [
   {
     id: 5,
     name: "Modern Townhouse",
+    type: "Townhouse",
     image: p5,
     badge: "New",
     price: "AED 3,100,000",
@@ -71,6 +75,7 @@ const allProperties = [
   {
     id: 6,
     name: "Skyline View Apartment",
+    type: "Apartment",
     image: p6,
     badge: "Exclusive",
     price: "AED 1,950,000",
@@ -82,6 +87,7 @@ const allProperties = [
   {
     id: 7,
     name: "Ultra Luxury Mansion",
+    type: "Villa",
     image: p7,
     badge: "Featured",
     price: "AED 25,000,000",
@@ -93,6 +99,7 @@ const allProperties = [
   {
     id: 8,
     name: "Canal View Apartment",
+    type: "Apartment",
     image: p8,
     badge: "New",
     price: "AED 2,150,000",
@@ -104,6 +111,7 @@ const allProperties = [
   {
     id: 9,
     name: "Signature Villa",
+    type: "Villa",
     image: p9,
     badge: "Exclusive",
     price: "AED 14,500,000",
@@ -114,8 +122,10 @@ const allProperties = [
   },
 ];
 
-const PropertiesSection = () => {
-  const [visibleCount, setVisibleCount] = useState(6);
+const getPriceValue = (price) =>
+  Number(price.replace(/[^0-9]/g, ""));
+
+const PropertiesSection = ({ filters }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -130,6 +140,25 @@ const PropertiesSection = () => {
     return () => observer.disconnect();
   }, []);
 
+const filteredProperties = !filters
+  ? allProperties
+  : allProperties.filter((item) => {
+      const price = getPriceValue(item.price);
+
+      const matchLocation =
+        !filters.location || item.location === filters.location;
+
+      const matchType =
+        !filters.type || item.type === filters.type;
+
+      // ✅ PRICE FIX: show properties UP TO selected price
+      const matchPrice =
+        !filters.price || price <= Number(filters.price);
+
+      return matchLocation && matchType && matchPrice;
+    });
+
+
   return (
     <section
       id="properties"
@@ -137,12 +166,9 @@ const PropertiesSection = () => {
     >
       <div className="properties-container">
         <h2 className="properties-title">Featured Properties</h2>
-        <p className="properties-subtitle">
-          Explore premium properties across the UAE
-        </p>
 
         <div className="properties-grid">
-          {allProperties.slice(0, visibleCount).map((item) => (
+          {filteredProperties.map((item) => (
             <div key={item.id} className="property-card">
               <div className="property-image">
                 <img src={item.image} alt={item.name} />
@@ -163,19 +189,17 @@ const PropertiesSection = () => {
 
                 <div className="card-footer">
                   <span className="price">{item.price}</span>
-                  <button className="cta">More Info</button>
+                  <button className="cta">Property Details</button>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {visibleCount < allProperties.length && (
-          <div className="view-all">
-            <button onClick={() => setVisibleCount(visibleCount + 3)}>
-              View All Properties
-            </button>
-          </div>
+        {filteredProperties.length === 0 && (
+          <p style={{ textAlign: "center", marginTop: "40px" }}>
+            No properties found.
+          </p>
         )}
       </div>
     </section>

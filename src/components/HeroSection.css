@@ -17,6 +17,8 @@
 
   padding-top: 72px;
   overflow-x: hidden;
+
+  filter: brightness(1.15);
 }
 
 /* Overlay */
@@ -25,8 +27,8 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.75) 100%
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.65) 100%
   );
   z-index: 1;
 }
@@ -62,8 +64,8 @@
   margin-bottom: 16px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: #fff;
-  color: #081f5c;
+  background: #1F3D2B;
+  color: #fff;
   font-size: 14px;
   font-weight: 500;
 }
@@ -93,7 +95,7 @@
 }
 
 .highlight {
-  color: #f5c56b;
+  color: #fff;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -115,34 +117,47 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1.2fr 1.2fr 1.2fr 1fr;
   gap: 12px;
-  background: #ffffff;
+
+  background: #1F3D2B;
   padding: 16px;
-  border-radius: 20px;
+  border-radius: 22px;
+
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
+/* Search Button */
 .search-btn {
-  background-color: #081f5c;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  height: 52px;
+  border-radius: 14px;
+
+  background-color: #8FB996;
+  color: #1F3D2B;
+  border-color: #1F3D2B;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
 }
 
 .search-btn:hover {
-  background-color: #d4af37; /* slightly lighter for premium hover */
+  background-color: #081c15;
+  color: #fff;
+  border-color: #1F3D2B;
   transform: translateY(-1px);
-  border-color: #d4af37;
 }
 
 /* ===============================
-   PREMIUM DROPDOWN – UPDATED
+   PREMIUM GREEN DROPDOWNS
    =============================== */
 
 .select-wrapper {
   position: relative;
 }
 
+/* Icons */
 .select-wrapper img {
   position: absolute;
   left: 16px;
@@ -150,24 +165,26 @@
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
-  opacity: 0.7;
+  opacity: 0.85;
   pointer-events: none;
-  transition: opacity 0.2s ease;
 }
 
+
+/* Select */
 .search-box select {
   width: 100%;
   height: 52px;
   padding: 0 48px 0 48px;
 
   border-radius: 14px;
-  border: 1px solid #e6e8ec;
+  border: 1px solid #8FB996;
+
+  background-color: #1F3D2B;
+  color: #fff;
 
   font-size: 15px;
   font-weight: 500;
-  color: #111827;
 
-  background-color: #ffffff;
   cursor: pointer;
 
   appearance: none;
@@ -175,43 +192,33 @@
   -moz-appearance: none;
 
   background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='%239CA3AF'>\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='%23ffffff'>\
 <path d='M7 10l5 5 5-5z'/>\
 </svg>");
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 16px;
 
-  transition:
-    border-color 0.18s ease,
-    box-shadow 0.18s ease,
-    background-color 0.18s ease;
+  transition: all 0.2s ease;
 }
 
-/* Hover – subtle premium feel */
+/* Placeholder */
+.search-box select option[value=""] {
+  color: #d1fae5;
+}
+
+/* Hover */
 .search-box select:hover {
-  border-color: #d1d5db;
+  background-color: #365f4a;
+  color: #fff;
 }
 
-/* Focus – luxury gold accent */
+/* Focus */
 .search-box select:focus {
-  border-color: #d4af37;
-  background-color: #fff;
-
-  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.18);
+  border-color: #3f6f55;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
   outline: none;
 }
-
-/* Disabled placeholder color */
-.search-box select:has(option[value=""]:checked) {
-  color: #9ca3af;
-}
-
-/* Icon reacts on focus */
-.select-wrapper:focus-within img {
-  opacity: 1;
-}
-
 
 /* ===============================
    MOBILE

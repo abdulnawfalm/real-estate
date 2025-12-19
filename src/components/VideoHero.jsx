@@ -2,7 +2,7 @@ import React from "react";
 import "./VideoHero.css";
 
 /* 🔹 IMPORT YOUR OWN VIDEO HERE */
-import heroVideo from "../assets/hero-video.mp4";
+import heroVideo from "../assets/hero-video-1.mp4";
 
 const VideoHero = () => {
   return (

@@ -29,7 +29,7 @@ LEFT CONTENT
   font-size: 13px;
   letter-spacing: 0.14em;
   font-weight: 700;
-  color: #d4af37;
+  color: #8FB996;
   margin-bottom: 18px;
 }
 
@@ -37,12 +37,12 @@ LEFT CONTENT
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 900;
   line-height: 1.1;
-  color: #081f5c;
+  color: #333;
   margin-bottom: 24px;
 }
 
 .about-title span {
-  color: #d4af37;
+  color: #1F3D2B;
 }
 
 .about-text {

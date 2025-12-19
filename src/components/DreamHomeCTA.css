@@ -7,7 +7,7 @@ DREAM HOME CTA – PREMIUM
   background: linear-gradient(
     135deg,
     #fff,
-    #EFE7DA
+    #eefff1
   );
 }
 
@@ -24,8 +24,8 @@ DREAM HOME CTA – PREMIUM
 
   background: linear-gradient(
     135deg,
-    #0A1A2A,
-    #081F5C
+    #1F3D2B,
+    #8FB996
   );
 }
 
@@ -36,7 +36,7 @@ LEFT CONTENT
 .dream-cta-content h2 {
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 900;
-  color: #D4AF37;
+  color: #65ffb7;
   margin-bottom: 12px;
 }
 
@@ -52,7 +52,7 @@ BUTTON
 =============================== */
 
 .dream-cta-btn {
-  background: #D4AF37;
+  background: #1e6946;
   color: #fff;
   border: none;
   padding: 16px 34px;
