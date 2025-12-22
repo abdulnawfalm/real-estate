@@ -20,7 +20,7 @@ export default function Contact() {
           <div className="info-item">
             <MdPhone className="icon" />
             <div className="info-text">
-              <p>+1 504 899 8221</p>
+              <p>+971 58 984 2522</p>
             </div>
           </div>
 
@@ -43,11 +43,10 @@ export default function Contact() {
             <input type="text" placeholder="Name *" />
             <input type="email" placeholder="Email *" />
             <input type="text" placeholder="Your Subject *" />
-            <textarea placeholder="Your Message *" rows="5"></textarea>
+            <textarea placeholder="Type your message here" rows="5"></textarea>
             <button type="submit">Send Message</button>
           </form>
         </div>
-
       </div>
     </section>
   );

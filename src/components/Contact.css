@@ -180,7 +180,7 @@
     font-weight: 600;
     letter-spacing: 0.14em;
     margin-bottom: 20px;
-    color: #081f5c;
+    color: #1F3D2B;
   }
 
   .info-item {
@@ -192,8 +192,7 @@
 
   .icon {
     font-size: 18px;
-    color: #081f5c;
-    background: #eef2ff;
+    color: #1F3D2B;
     width: 36px;
     height: 36px;
     border-radius: 10px;
@@ -254,7 +253,7 @@
 
   .contact-form input:focus,
   .contact-form textarea:focus {
-    box-shadow: 0 0 0 2px rgba(8, 31, 92, 0.25);
+    box-shadow: 0 0 0 2px #081f5c40;
   }
 
   /* =====================
@@ -266,7 +265,7 @@
     font-size: 14px;
     font-weight: 600;
     border-radius: 14px;
-    background: linear-gradient(135deg, #081f5c, #0b2a7a);
+    background-color: #1F3D2B;
   }
 
   .contact-form button:hover {

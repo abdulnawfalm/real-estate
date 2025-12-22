@@ -104,7 +104,6 @@ const HeroSection = ({ onSearch }) => {
               <option value="25000000">AED 25,000,000</option>
             </select>
           </div>
-
           <button className="search-btn" onClick={handleSearch}>
             Search
           </button>

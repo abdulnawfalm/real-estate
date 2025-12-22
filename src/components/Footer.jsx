@@ -72,7 +72,7 @@ export default function Footer() {
 
           <div className="contact-item">
             <FaPhoneAlt />
-            <span>+1 504 899 8221</span>
+            <span>+971 58 984 2522</span>
           </div>
 
           <div className="contact-item">
